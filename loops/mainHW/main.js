@@ -18,7 +18,6 @@ while (i < 21){
 let b = 1;
 while (b < 21){
     document.write(`<div>${b}Hello</div>`)
-
     b++;
 }
 // - Використовуючи данні з масиву, за допомоги document.write та циклу
@@ -27,12 +26,12 @@ while (b < 21){
 
 let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
 
+    document.write(`<ul>`)
 for (let i = 0; i < listOfItems.length; i++) {
     const listOfItem = listOfItems[i];
-    document.write(`<ul>`)
     document.write(`<li>${listOfItem}</li>`)
-    document.write(`</ul>`)
 }
+    document.write(`</ul>`)
 
 //
 // -----------------------------------------------
