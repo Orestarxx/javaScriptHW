@@ -84,8 +84,9 @@ const books = [
     {title:'Harry Potter',pages:454,author:'Педро',genre:['Пригоди','Детектив']},
     {title:'',pages:0,author:'',genre:''}
 ];
-for (const book of books) {
-    if( Math.max(book.pages)){
+for (let i = 0; i < books.length; i++) {
+    const book = books[i];
+    if(book.genre.length[0] > book.genre.length){
         console.log(book);
     }
 }
