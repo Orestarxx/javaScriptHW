@@ -1,21 +1,18 @@
 // - Знайти та вивести довижину настипних стрінгових значень
  let strings =['hello world', 'lorem ipsum', 'javascript is cool']
-for (const string of strings) {
-    console.log(string.length);
-}
-
+strings.forEach(string => console.log(string.length));
 
 // - Перевести до великого регістру наступні стрінгові значення
 // 'hello world', 'lorem ipsum', 'javascript is cool'
 // - Перевести до нижнього регістру настипні стрінгові значення
 // 'HELLO WORLD', 'LOREM IPSUM', 'JAVASCRIPT IS COOL'
  let arr = ['hello world', 'lorem ipsum', 'javascript is cool']
-for (const string of arr) {
-   let upperCase = string.toUpperCase()
-console.log(upperCase);
-   let lowerCase = upperCase.toLowerCase()
+arr.forEach(ar =>{
+    let upperCase = ar.toUpperCase()
+    console.log(upperCase);
+    let lowerCase = ar.toLowerCase()
     console.log(lowerCase);
-}
+})
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
 let str1 = ' dirty string   '
 let trim = str1.trim();
@@ -86,7 +83,7 @@ console.log(filter);
  })
 console.log(courseMap);
 // =========================
-//     описати колоду карт (від 6 до туза без джокерів)
+
 let cards = [
 
     {cardSuit: 'clubs', value: 2, color:'black'},
@@ -149,12 +146,54 @@ let cards = [
     {cardSuit: 'spades', value: 'King', color:'black'},
     {cardSuit: 'spades', value: 'Ace', color:'black'},
     {value: 'Joker', color:'black'}]
+//     описати колоду карт (від 6 до туза без джокерів)
+ let withOutJokers = [];
+cards.forEach(card =>{
+    if(card.value !== 'Joker'){
+       withOutJokers.push(card)
+    }
+});
+console.log(withOutJokers);
 // - знайти піковий туз
+ let ace = cards.find(card => card.cardSuit === 'spades' && card.value === 'Ace');
+console.log(ace);
 // - всі шістки
+let cardSix = [];
+cards.filter(card =>{
+    if(card.value === 6){
+        cardSix.push(card)
+    }
+})
+console.log(cardSix);
+
 // - всі червоні карти
+let redCards = [];
+cards.forEach(card =>{
+    if(card.color === 'red'){
+        redCards.push(card)
+    }
+})
+console.log(redCards);
 // - всі буби
+let diamonds = [];
+cards.forEach(card =>{
+    if(card.cardSuit === 'diamonds'){
+        diamonds.push(card)
+    }
+})
+console.log(diamonds);
 // - всі трефи від 9 та більше
-//
+let clubs = [];
+cards.filter(card =>{
+    if(card.value >= 9 && card.cardSuit === 'clubs'){
+        clubs.push(card)
+    }
+    if (typeof card.value === 'string' && card.cardSuit === 'clubs'){
+        clubs.push(card)
+    }
+    return card
+})
+console.log(clubs);
 // =========================
 //
 //     Взяти описану колоду карт, та за допомоги reduce упакувати всі карти по "мастях" в об'єкт
@@ -174,11 +213,10 @@ let cards = [
          return accumulator
      },{spades:[],diamonds:[],hearts:[],clubs:[]})
 
-console.log(result.clubs);
+// console.log(result.clubs);
 // =========================
 //     взяти з arrays.js (який лежить в папці 2023 plan) масив coursesArray
-// --написати пошук всіх об'єктів, в який в modules є sass
-// --написати пошук всіх об'єктів, в який в modules є docker
+
 let coursesArray = [
     {
         title: 'JavaScript Complex',
@@ -248,3 +286,17 @@ let coursesArray = [
         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
     }
 ];
+// --написати пошук всіх об'єктів, в який в modules є sass
+// --написати пошук всіх об'єктів, в який в modules є docker
+let currentModule = [];
+function finder(module) {
+for (const course of  coursesArray) {
+    for (const index of course.modules) {
+        if(index === module){
+            currentModule.push(course)
+        }
+    }
+}
+}
+finder('docker')
+console.log(currentModule);
