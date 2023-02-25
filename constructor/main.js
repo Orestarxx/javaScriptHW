@@ -67,8 +67,34 @@ console.log(ordered);
 // -- increaseMaxSpeed (newSpeed) - яка підвищує значення максимальної швидкості на значення newSpeed
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
-//
-//
+ function Car(model,producer,year,maxSpeed,engineCapacity,driver) {
+     this.model = model;
+     this.producer = producer;
+     this.year = year;
+     this.maxSpeed = maxSpeed;
+     this.engineCapacity = engineCapacity;
+     this.driver = driver;
+     this.drive = function () {console.log(`їдемо зі швидкістю ${maxSpeed} на годину`)};
+     this.addDriver = function (driver) {this.driver.push(driver)};
+     this.increaseMaxSpeed = function (newSpeed) {this.maxSpeed = newSpeed};
+     this.changeYear = function (newYear) {this.year = newYear};
+     this.info = function (){
+         for (const argument in this) {
+             if(typeof this[argument]!=='function') {
+                 console.log(`${argument} - ${JSON.stringify(this[argument])}`)
+             }
+         }
+     }
+ }
+let audi =  new Car('quatro','Audi',2005,270,2,[])
+audi.drive()
+audi.info()
+audi.addDriver({name:'oleg',age:23,driver:1})
+audi.addDriver({name:'Orest',age:23,driver:2})
+audi.increaseMaxSpeed(260)
+audi.changeYear(2007)
+console.log(audi);
+ audi.info()
 // - (Те саме, тільки через клас)
 // Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
 // -- drive () - яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
@@ -83,3 +109,42 @@ console.log(ordered);
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
+class Princess {
+    constructor(name,age,gender,size) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.size = size;
+    }
+}
+class Prince {
+    constructor(name,age,foundShoe) {
+        this.name = name;
+        this.age = age;
+        this.foundShoe = foundShoe;
+    }
+}
+ let Princesses = [
+     new Princess('Gabriella',22,'female',41),
+     new Princess('Gabriella',18,'female',35),
+     new Princess('Gabriella',23,'male',40),
+     new Princess('Gabriella',34,'male',37),
+     new Princess('Gabriella',45,'male',39),
+     new Princess('Gabriella',16,'female',38),
+     new Princess('Gabriella',26,'male',42),
+     new Princess('Gabriella',28,'female',41),
+     new Princess('Gabriella',33,'male',45),
+     new Princess('Gabriella',29,'female',40),
+     new Princess('Gabriella',18,'male',38)
+ ]
+let prince = new Prince('Petro Schur',31,35)
+
+for (const princess of Princesses) {
+    if(princess.age === 18){
+        if(princess.gender === 'female'){
+           if (princess.size === prince.foundShoe){
+               console.log(princess);
+           }
+        }
+    }
+}
