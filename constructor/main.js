@@ -89,7 +89,7 @@ let audi =  new Car('quatro','Audi',2005,270,2)
 audi.drive()
 audi.info()
 audi.addDriver()
-audi.addDriver({name:'Orest',age:23,driver:2})
+audi.addDriver({name:'Orest',age:23})
 audi.increaseMaxSpeed(260)
 audi.changeYear(2007)
 console.log(audi);
