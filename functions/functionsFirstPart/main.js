@@ -51,7 +51,44 @@ creatorUl('hello')
  }
  console.log(numberFinder(array,'+'));
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+let arr = [10,31,22];
+function sum(array) {
+    let sum = 0;
+    for (let i = 0; i < array.length; i+= 1) {
+        const element = array[i];
+        sum += array[i];
+    }
+    return sum
+}
+
+console.log(sum(arr));
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
+const swapElements = (array, index1, index2) => {
+    let temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
+};
+
+let myArray = [11, 22, 33, 44, 80];
+swapElements(myArray, 0, 2);
+console.log(myArray);
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+
+
+
+
+
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
+function exchange(sumUAH,currencyValues,exchangeCurrency) {
+    if(exchangeCurrency === 'USD' && currencyValues[1].currency === 'USD'){
+       let exchangeUSD = [{currency:'USD',value:currencyValues[1].value}];
+       return sumUAH / exchangeUSD[0].value
+    }
+    if(exchangeCurrency === 'EUR'){
+       let exchangeEUR = [{currency:'EUR',value:currencyValues[0].value}];
+        return sumUAH / exchangeEUR[0].value
+    }
+}
+
+console.log(exchange(100000, [{currency: 'EUR', value: 42},{currency: 'USD',value: 40}], 'USD'));
