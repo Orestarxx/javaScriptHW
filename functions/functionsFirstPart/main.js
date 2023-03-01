@@ -92,3 +92,4 @@ function exchange(sumUAH,currencyValues,exchangeCurrency) {
 }
 
 console.log(exchange(100000, [{currency: 'EUR', value: 42},{currency: 'USD',value: 40}], 'USD'));
+
