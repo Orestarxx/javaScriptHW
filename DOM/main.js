@@ -231,61 +231,83 @@ let arrayCourses = [
     }
 ];  //{title,monthDuration,hourDuration,modules:[string,string]}
 
-let coursesHolder = document.createElement('div');
-coursesHolder.classList.add('main');
-document.body.appendChild(coursesHolder);
-
-for (const course of arrayCourses) {
-
-    let courseDiv = document.createElement('div');
-    courseDiv.classList.add('infoDiv');
-    coursesHolder.appendChild(courseDiv);
-
-    let titleDiv = document.createElement('div');
-    titleDiv.classList.add('titleDiv');
-    courseDiv.appendChild(titleDiv);
-
-    let title = document.createElement('h2');
-    title.innerText = course.title;
-    titleDiv.appendChild(title);
-
-    let monthHourHolder = document.createElement('div');
-    monthHourHolder.classList.add('monthHour');
-    courseDiv.appendChild(monthHourHolder);
-
-    let monthDiv = document.createElement('div');
-    monthDiv.classList.add('month');
-    monthDiv.innerHTML = `<b>month Duration:</b> ${course.monthDuration}`
-    monthHourHolder.appendChild(monthDiv);
-
-    let hourDiv = document.createElement('div');
-    hourDiv.classList.add('hour');
-    hourDiv.innerHTML = `<b>hour Duration:</b> ${course.hourDuration}`
-    monthHourHolder.appendChild(hourDiv);
-
-    let ulDivHolder = document.createElement('div');
-    ulDivHolder.classList.add('ulHolder');
-    courseDiv.appendChild(ulDivHolder);
-
-    let ulTag = document.createElement('ul');
-    ulDivHolder.appendChild(ulTag);
-    for (const module of course.modules) {
-        let liModule = document.createElement('li');
-        liModule.innerText = module;
-        ulTag.appendChild(liModule)
-    }
-
-
-
-}
+// let coursesHolder = document.createElement('div');
+// coursesHolder.classList.add('main');
+// document.body.appendChild(coursesHolder);
+//
+// for (const course of arrayCourses) {
+//
+//     let courseDiv = document.createElement('div');
+//     courseDiv.classList.add('infoDiv');
+//     coursesHolder.appendChild(courseDiv);
+//
+//     let titleDiv = document.createElement('div');
+//     titleDiv.classList.add('titleDiv');
+//     courseDiv.appendChild(titleDiv);
+//
+//     let title = document.createElement('h2');
+//     title.innerText = course.title;
+//     titleDiv.appendChild(title);
+//
+//     let monthHourHolder = document.createElement('div');
+//     monthHourHolder.classList.add('monthHour');
+//     courseDiv.appendChild(monthHourHolder);
+//
+//     let monthDiv = document.createElement('div');
+//     monthDiv.classList.add('month');
+//     monthDiv.innerHTML = `<b>month Duration:</b> ${course.monthDuration}`
+//     monthHourHolder.appendChild(monthDiv);
+//
+//     let hourDiv = document.createElement('div');
+//     hourDiv.classList.add('hour');
+//     hourDiv.innerHTML = `<b>hour Duration:</b> ${course.hourDuration}`
+//     monthHourHolder.appendChild(hourDiv);
+//
+//     let ulDivHolder = document.createElement('div');
+//     ulDivHolder.classList.add('ulHolder');
+//     courseDiv.appendChild(ulDivHolder);
+//
+//     let ulTag = document.createElement('ul');
+//     ulDivHolder.appendChild(ulTag);
+//     for (const module of course.modules) {
+//         let liModule = document.createElement('li');
+//         liModule.innerText = module;
+//         ulTag.appendChild(liModule)
+//     }
+//
+//
+// }
 
 // ------------------
 //
 //     - Створити довільний елемент з id = text та створити кнопку.Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
+
+
+// const button = document.getElementById('button');
+// const element = document.getElementById('void');
 //
-//
+// button.addEventListener('click', function() {
+//     element.classList.toggle('color');
+// });
+
+
 //     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
-//
+
+
+// const form = document.querySelector('form');
+// const submitButton = document.getElementById('submitButton');
+// submitButton.addEventListener('click', function(event) {
+//     const nameInput = document.getElementById('name');
+//     if(nameInput.value !== 18 && nameInput.value < 18){
+//         console.log('підрости')
+//     }else{
+//     console.log(`велкам`);
+//     }
+//     form.reset();
+//     event.preventDefault();
+// });
+
+
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)

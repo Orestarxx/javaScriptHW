@@ -72,3 +72,27 @@ p{
     height: 80%;
     border: 1px solid;
 }
+body{
+    margin: 0;
+}
+.changer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.color{
+    background-color: violet;
+}
+.header{
+    width: 80%;
+    height: 70px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inpHold{
+    width: 100%;
+}
