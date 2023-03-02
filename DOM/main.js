@@ -311,3 +311,32 @@ let arrayCourses = [
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
+
+
+function createTable() {
+    let in1 = document.getElementById(`in1`);
+    let in2 = document.getElementById(`in2`);
+    let in3 = document.getElementById(`in3`);
+    let b1 = document.getElementById(`b1`);
+    let find = document.getElementById(`tb`);
+    if (find !== null) {
+        find.remove();
+    }
+    let table = document.createElement(`table`);
+    table.setAttribute(`id`, `tb`)
+
+    document.body.appendChild(table);
+    for (let i = 0; i < in1.value; i++) {
+        let tr = document.createElement(`tr`);
+        table.appendChild(tr);
+        for (let j = 0; j < in2.value; j++) {
+            let td = document.createElement(`td`);
+            td.innerText = in3.value;
+            tr.appendChild(td);
+        }
+
+
+    }
+
+
+}

@@ -96,3 +96,16 @@ body{
 .inpHold{
     width: 100%;
 }
+#myd{
+    width: 200px;
+    height: 200px;
+    background: midnightblue;
+
+}
+tr,td,th{
+    border: midnightblue 2px solid;
+}
+table{
+    border: midnightblue 2px solid;
+    margin-top: 5px;
+}
