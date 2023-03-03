@@ -1,0 +1,25 @@
+.father{
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction:column;
+    column-gap: revert;
+
+}
+.main{
+    width: 200px;
+    height: 100px;
+    background-color: slategrey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
+tr,td,th{
+    border: midnightblue 2px solid;
+}
+table{
+    border: midnightblue 2px solid;
+    margin-top: 5px;
+}
