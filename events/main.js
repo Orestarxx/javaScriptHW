@@ -103,41 +103,82 @@ const objectsArray = [{name: 'Orest', age: 23},
     {name: 'Orest', age: 23},
     {name: 'Orest', age: 23},
     {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
+    {name: 'Orest', age: 23},
     {name: 'Orest', age: 23}
+
+
 ];
-const itemsPerPage = 10; // Number of items to display per page
-let currentPage = 1; // Current page of the pagination
+const itemsPerPage = 10;
+let currentPage = 1;
 
 
-// Calculate the total number of pages needed for the pagination
 const totalPages = Math.ceil(objectsArray.length / itemsPerPage);
 
-// Function to display items for the current page
+
+
 function displayItems() {
     const startIndex = (currentPage - 1) * itemsPerPage;
+
     const endIndex = startIndex + itemsPerPage;
     const itemsOnPage = objectsArray.slice(startIndex, endIndex);
 
-    // Code to display the items on the current page
-    // For example:
+
     const itemsContainer = document.getElementById("items-container");
     itemsContainer.innerHTML = "";
     itemsOnPage.forEach(item => {
         const itemElement = document.createElement("div");
-        itemElement.textContent = item.name; // Or any other property of your objects
+        itemElement.textContent = ` Name: ${item.name} Age: ${item.age} `
         itemsContainer.appendChild(itemElement);
     });
 }
 
-// Function to update the pagination buttons
 function updatePagination() {
     const paginationContainer = document.getElementById("pagination-container");
     paginationContainer.innerHTML = "";
 
-    // Create the Previous button
     const previousButton = document.createElement("button");
     previousButton.textContent = "Previous";
-    previousButton.disabled = currentPage === 1; // Disable the button if it's the first page
+    previousButton.disabled = currentPage === 1;
     previousButton.addEventListener("click", () => {
         if (currentPage > 1) {
             currentPage--;
@@ -147,11 +188,11 @@ function updatePagination() {
     });
     paginationContainer.appendChild(previousButton);
 
-    // Create a button for each page
+
     for (let i = 1; i <= totalPages; i++) {
         const pageButton = document.createElement("button");
         pageButton.textContent = `${i}`;
-        pageButton.disabled = i === currentPage; // Disable the button if it's the current page
+        pageButton.disabled = i === currentPage;
         pageButton.addEventListener("click", () => {
             currentPage = i;
             displayItems();
@@ -160,10 +201,9 @@ function updatePagination() {
         paginationContainer.appendChild(pageButton);
     }
 
-    // Create the Next button
     const nextButton = document.createElement("button");
     nextButton.textContent = "Next";
-    nextButton.disabled = currentPage === totalPages; // Disable the button if it's the last page
+    nextButton.disabled = currentPage === totalPages;
     nextButton.addEventListener("click", () => {
         if (currentPage < totalPages) {
             currentPage++;
@@ -173,11 +213,8 @@ function updatePagination() {
     });
     paginationContainer.appendChild(nextButton);
 }
-
-// Initial display of the first page
 displayItems();
 
-// Create the pagination UI
 const paginationContainer = document.createElement("div");
 paginationContainer.id = "pagination-container";
 document.body.appendChild(paginationContainer);
