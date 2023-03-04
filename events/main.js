@@ -1,42 +1,42 @@
 //
 // Стоврити форму з трьома полями для name,sruname,age та кнопкою. При натисканні на кнопку зчитати данні з полів, та вивести об'єкт в документ. Іншими словами : заповниои форму, натиснули кнопку, під формою з'явився блок з вашим об'єктом
 // ==========================
-// let form = document.forms[0];
-// let fatherDiv = document.createElement('div');
-// fatherDiv.classList.add('father');
-// document.body.append(fatherDiv);
-// form.addEventListener('submit', function (eo) {
-//     eo.preventDefault()
-//
-//     let mainDiv = document.createElement('div');
-//     mainDiv.classList.add('main')
-//     fatherDiv.append(mainDiv)
-//
-//
-//     let nameDiv = document.createElement('div');
-//     nameDiv.innerText = ` NAME: ${document.forms[0].userName.value}`;
-//
-//     let surNameDiv = document.createElement('div');
-//     surNameDiv.innerText = `SURNAME: ${document.forms[0].surname.value}`;
-//
-//     let ageDiv = document.createElement('div');
-//     ageDiv.innerText = `AGE: ${document.forms[0].age.value}`;
-//
-//     mainDiv.append(nameDiv, surNameDiv, ageDiv);
-//     document.forms[0].reset()
-// })
+let form = document.forms[0];
+let fatherDiv = document.createElement('div');
+fatherDiv.classList.add('father');
+document.body.append(fatherDiv);
+form.addEventListener('submit', function (eo) {
+    eo.preventDefault()
+
+    let mainDiv = document.createElement('div');
+    mainDiv.classList.add('main')
+    fatherDiv.append(mainDiv)
+
+
+    let nameDiv = document.createElement('div');
+    nameDiv.innerText = ` NAME: ${document.forms[0].userName.value}`;
+
+    let surNameDiv = document.createElement('div');
+    surNameDiv.innerText = `SURNAME: ${document.forms[0].surname.value}`;
+
+    let ageDiv = document.createElement('div');
+    ageDiv.innerText = `AGE: ${document.forms[0].age.value}`;
+
+    mainDiv.append(nameDiv, surNameDiv, ageDiv);
+    document.forms[0].reset()
+})
 
 // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час відвідування сторінки. Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
 // =========================
 //
-// const today = new Date();
-//
-// const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-// const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-//
-// let dateTime = [date, time];
-//
-// localStorage.setItem('time', JSON.stringify(dateTime));
+const today = new Date();
+
+const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+let dateTime = [date, time];
+
+localStorage.setItem('time', JSON.stringify(dateTime));
 
 // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 // ==========================
@@ -163,6 +163,7 @@ function displayItems() {
     const itemsOnPage = objectsArray.slice(startIndex, endIndex);
 
 
+
     const itemsContainer = document.getElementById("items-container");
     itemsContainer.innerHTML = "";
     itemsOnPage.forEach(item => {
@@ -220,32 +221,33 @@ paginationContainer.id = "pagination-container";
 document.body.appendChild(paginationContainer);
 updatePagination();
 
+
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
 
 //
-// function createTable() {
-//     let in1 = document.getElementById(`in1`);
-//     let in2 = document.getElementById(`in2`);
-//     let in3 = document.getElementById(`in3`);
-//     let b1 = document.getElementById(`b1`);
-//     let find = document.getElementById(`tb`);
-//     if (find !== null) {
-//         find.remove();
-//     }
-//     let table = document.createElement(`table`);
-//     table.setAttribute(`id`, `tb`)
-//
-//     document.body.appendChild(table);
-//     for (let i = 0; i < in1.value; i++) {
-//         let tr = document.createElement(`tr`);
-//         table.appendChild(tr);
-//         for (let j = 0; j < in2.value; j++) {
-//             let td = document.createElement(`td`);
-//             td.innerText = in3.value;
-//             tr.appendChild(td);
-//         }
-//     }
-//     fatherDiv.append(table)
-// }
+function createTable() {
+    let in1 = document.getElementById(`in1`);
+    let in2 = document.getElementById(`in2`);
+    let in3 = document.getElementById(`in3`);
+    let b1 = document.getElementById(`b1`);
+    let find = document.getElementById(`tb`);
+    if (find !== null) {
+        find.remove();
+    }
+    let table = document.createElement(`table`);
+    table.setAttribute(`id`, `tb`)
+
+    document.body.appendChild(table);
+    for (let i = 0; i < in1.value; i++) {
+        let tr = document.createElement(`tr`);
+        table.appendChild(tr);
+        for (let j = 0; j < in2.value; j++) {
+            let td = document.createElement(`td`);
+            td.innerText = in3.value;
+            tr.appendChild(td);
+        }
+    }
+    fatherDiv.append(table)
+}
