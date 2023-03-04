@@ -10,13 +10,13 @@
 </head>
 <body>
 <form name="user">
-    <input type="text" name="userName">
+    <input type="text" name="userName" required>
     <br>
-    <input type="text" name="surname">
+    <input type="text" name="surname" required>
     <br>
-    <input type="text" name="age">
+    <input type="text" name="age" required>
     <br>
-    <button>save</button>
+    <button id="save">save</button>
 </form>
 
 
@@ -26,6 +26,7 @@
 <button id="b1" onclick="createTable()"> click me</button>
 <div id="items-container"></div>
 <div id="pagination-container"></div>
+<div id="count"></div>
 
 <script src="main.js"></script>
 </body>

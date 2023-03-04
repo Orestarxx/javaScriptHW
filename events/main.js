@@ -5,26 +5,33 @@ let form = document.forms[0];
 let fatherDiv = document.createElement('div');
 fatherDiv.classList.add('father');
 document.body.append(fatherDiv);
+
+
+
 form.addEventListener('submit', function (eo) {
     eo.preventDefault()
+     let userName = document.forms[0].userName.value;
+    let surName = document.forms[0].surname.value;
+    let age = document.forms[0].age.value;
 
     let mainDiv = document.createElement('div');
     mainDiv.classList.add('main')
     fatherDiv.append(mainDiv)
 
-
     let nameDiv = document.createElement('div');
-    nameDiv.innerText = ` NAME: ${document.forms[0].userName.value}`;
+    nameDiv.innerText = ` NAME: ${userName}`;
 
     let surNameDiv = document.createElement('div');
-    surNameDiv.innerText = `SURNAME: ${document.forms[0].surname.value}`;
+    surNameDiv.innerText = `SURNAME: ${surName}`;
 
     let ageDiv = document.createElement('div');
-    ageDiv.innerText = `AGE: ${document.forms[0].age.value}`;
-
+    ageDiv.innerText = `AGE: ${age}`;
     mainDiv.append(nameDiv, surNameDiv, ageDiv);
+
+
     document.forms[0].reset()
 })
+
 
 // Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховще, в масив sessions зберігається інформація про дату та час відвідування сторінки. Є ще сторінка sessions.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а побудувати дом структуру під кожну сессію
 // =========================
@@ -39,6 +46,20 @@ let dateTime = [date, time];
 localStorage.setItem('time', JSON.stringify(dateTime));
 
 // є сторінка, на якій є блок, я кому знаходиьтся цифра. написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
+
+let count = 0;
+
+if(localStorage.getItem("count")) {
+    count = parseInt(localStorage.getItem("count"));
+}
+
+count++;
+
+localStorage.setItem("count", count.toString());
+
+let countEl = document.getElementById("count");
+countEl.textContent = count.toString();
+    console.log(countEl);
 // ==========================
 //     зробити масив на 100 об'єктів та дві кнопки prev next
 // при завантажені сторінки з'являються перші 10 об'єктів.
