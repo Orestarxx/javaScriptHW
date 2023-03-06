@@ -7,10 +7,9 @@ fatherDiv.classList.add('father');
 document.body.append(fatherDiv);
 
 
-
 form.addEventListener('submit', function (eo) {
     eo.preventDefault()
-     let userName = document.forms[0].userName.value;
+    let userName = document.forms[0].userName.value;
     let surName = document.forms[0].surname.value;
     let age = document.forms[0].age.value;
 
@@ -49,7 +48,7 @@ localStorage.setItem('time', JSON.stringify(dateTime));
 
 let count = 0;
 
-if(localStorage.getItem("count")) {
+if (localStorage.getItem("count")) {
     count = parseInt(localStorage.getItem("count"));
 }
 
@@ -176,13 +175,11 @@ let currentPage = 1;
 const totalPages = Math.ceil(objectsArray.length / itemsPerPage);
 
 
-
 function displayItems() {
     const startIndex = (currentPage - 1) * itemsPerPage;
 
     const endIndex = startIndex + itemsPerPage;
     const itemsOnPage = objectsArray.slice(startIndex, endIndex);
-
 
 
     const itemsContainer = document.getElementById("items-container");
@@ -235,6 +232,7 @@ function updatePagination() {
     });
     paginationContainer.appendChild(nextButton);
 }
+
 displayItems();
 
 const paginationContainer = document.createElement("div");

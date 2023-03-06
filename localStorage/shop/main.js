@@ -10,14 +10,6 @@ let products = [{name:'Melko', price:4, photo:'https://th.bing.com/th/id/OIP.HYj
     {name:'Bear', price:2, photo:'https://www.ladycarehealth.com/wp-content/uploads/2013/03/Beer2.jpg',type:'product'},
     {name:'', price:0, photo:''},
     {name:'', price:0, photo:''}
-    // {name:'', price:0, photo:''},
-    // {name:'', price:0, photo:''},
-    // {name:'', price:0, photo:''},
-    // {name:'', price:0, photo:''},
-    // {name:'', price:0, photo:''},
-    // {name:'', price:0, photo:''},
-    // {name:'', price:0, photo:''}
-
 ];
 
 
