@@ -14,6 +14,8 @@ fetch('https://dummyjson.com/products')
                 let cartStorage = JSON.parse(localStorage.getItem('cart')) || [];
                 cartStorage.push(product);
                 localStorage.setItem('cart', JSON.stringify(cartStorage));
+                let counter = document.getElementById('counter');
+                counter.innerText = cartStorage.length;
 
             }
 
@@ -25,9 +27,4 @@ fetch('https://dummyjson.com/products')
 
 
         }
-        let counter = document.getElementById('counter');
-        let storage = JSON.parse(localStorage.getItem('cart'));
-        counter.innerText = storage.length;
-
-        console.log(storage.length);
     })
