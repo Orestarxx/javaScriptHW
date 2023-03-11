@@ -4,13 +4,13 @@ let userUrl = new URL(location.href);
 let user = JSON.parse(currentUser)
 console.log(user);
 
-let d = document.createElement(`div`);
- d.classList.add(`father`);
- document.body.appendChild(d);
+let fatherDiv = document.createElement(`div`);
+ fatherDiv.classList.add(`father`);
+ document.body.appendChild(fatherDiv);
 
  let maind =document.createElement(`div`);
  maind.classList.add(`main`);
- d.appendChild(maind);
+ fatherDiv.appendChild(maind);
 
  let idd1 = document.createElement(`div`);
  idd1.classList.add(`index`);
@@ -101,11 +101,15 @@ let d = document.createElement(`div`);
  bs.classList.add(`fourth`);
  bs.innerHTML =`Bs:${user.company.bs}`;
  company.appendChild(bs);
+ let buttDiv = document.createElement('div');
+ buttDiv.classList.add('buttDiv');
+ document.body.appendChild(buttDiv)
 
- let button = document.createElement('button');
- button.innerHTML = 'post of current user';
- button.value = 'on'
- document.body.appendChild(button);
+ let butt = document.createElement('button');
+ butt.classList.add('button')
+ butt.innerHTML = 'posts of current user';
+ butt.value = 'on'
+ buttDiv.append(butt)
 
 let divUl = document.getElementById('ulDiv');
 divUl.style.display = "none";
@@ -118,18 +122,23 @@ divUl.style.display = "none";
      .then(response => response.json())
      .then(posts => {
       let ul = document.createElement(`ul`);
-      document.body.appendChild(divUl);
       divUl.appendChild(ul);
+      document.body.appendChild(divUl);
+
       for (const post of posts) {
        let postLi = document.createElement('li');
        postLi.innerText = post.title;
-       ul.append(postLi)
+       let postA = document.createElement('a');
+       postA.href = `../postDetails/postIndex.html?data=${JSON.stringify(post)}`
+       postA.target = '_blank'
+       ul.append(postA);
+       postA.append(postLi)
       }
+
      });
 
 
- button.addEventListener('click', (eo) =>{
-
+butt.addEventListener('click', (eo) => {
  if (divUl.style.display === "none") {
   divUl.style.display = "block";
  } else {
