@@ -7,24 +7,30 @@ fetch('https://dummyjson.com/products')
     .then(products => {
         console.log(products);
         for (const product of products.products) {
-
             let productDiv = document.createElement('div');
             productDiv.classList.add('productDiv');
-            productDiv.onclick = function (eo) {
-                let cartStorage = JSON.parse(localStorage.getItem('cart')) || [];
-                cartStorage.push(product);
-                localStorage.setItem('cart', JSON.stringify(cartStorage));
-                let counter = document.getElementById('counter');
-                counter.innerText = cartStorage.length;
-
-            }
-
             mainDiv.append(productDiv);
             let imageProduct = document.createElement('img');
             imageProduct.classList.add('photo');
             imageProduct.src = product.thumbnail;
             productDiv.append(imageProduct);
 
+            let cartCircle = document.createElement('div');
+            cartCircle.classList.add('cartCircle');
 
+            let circleImg = document.createElement('img')
+            circleImg.src = './icons/trolley.png';
+            circleImg.classList.add('circleImg')
+            cartCircle.append(circleImg);
+            productDiv.append(cartCircle);
+
+            cartCircle.addEventListener('click',() =>{
+                let cartStorage = JSON.parse(localStorage.getItem('cart')) || [];
+                cartStorage.push(product);
+                localStorage.setItem('cart', JSON.stringify(cartStorage));
+            })
         }
+
+
     })
+

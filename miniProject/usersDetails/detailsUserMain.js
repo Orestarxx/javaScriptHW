@@ -101,6 +101,7 @@ let fatherDiv = document.createElement(`div`);
  bs.classList.add(`fourth`);
  bs.innerHTML =`Bs:${user.company.bs}`;
  company.appendChild(bs);
+
  let buttDiv = document.createElement('div');
  buttDiv.classList.add('buttDiv');
  document.body.appendChild(buttDiv)
@@ -128,6 +129,7 @@ divUl.style.display = "none";
       for (const post of posts) {
        let postLi = document.createElement('li');
        postLi.innerText = post.title;
+
        let postA = document.createElement('a');
        postA.href = `../postDetails/postIndex.html?data=${JSON.stringify(post)}`
        postA.target = '_blank'
