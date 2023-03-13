@@ -7,9 +7,19 @@ fetch('https://dummyjson.com/products')
     .then(products => {
         console.log(products);
         for (const product of products.products) {
+            let productHolder = document.createElement('div');
+            productHolder.classList.add('prHolder')
+            mainDiv.append(productHolder);
+
+            let productA = document.createElement('a');
+            productA.target ='_blank';
+            productA.href = `detailsProduct.html?product=${JSON.stringify(product)}`;
+            productHolder.append(productA);
+
             let productDiv = document.createElement('div');
             productDiv.classList.add('productDiv');
-            mainDiv.append(productDiv);
+            productA.append(productDiv);
+
             let imageProduct = document.createElement('img');
             imageProduct.classList.add('photo');
             imageProduct.src = product.thumbnail;
@@ -17,18 +27,18 @@ fetch('https://dummyjson.com/products')
 
             let cartCircle = document.createElement('div');
             cartCircle.classList.add('cartCircle');
-
-            let circleImg = document.createElement('img')
-            circleImg.src = './icons/trolley.png';
-            circleImg.classList.add('circleImg')
-            cartCircle.append(circleImg);
-            productDiv.append(cartCircle);
-
             cartCircle.addEventListener('click',() =>{
                 let cartStorage = JSON.parse(localStorage.getItem('cart')) || [];
                 cartStorage.push(product);
                 localStorage.setItem('cart', JSON.stringify(cartStorage));
-            })
+            });
+
+            let circleImg = document.createElement('img');
+            circleImg.src = './icons/trolley.png';
+            circleImg.classList.add('circleImg');
+            cartCircle.append(circleImg);
+            productHolder.append(cartCircle);
+
         }
 
 

@@ -33,10 +33,9 @@ body{
 .cartCircle{
     width: 40px;
     height: 40px;
-    background-color: #e5e1db;
+    background-color: #c3efe4;
     border-radius: 50%;
     position: absolute;
-    top: 0%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,12 +49,17 @@ body{
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+.prHolder{
+    /*width: 200px;*/
+    /*height: 200px;*/
+    margin-top: 20px;
+    display: flex;
+}
 .productDiv{
 background-color: #2E2929;
     width: 200px;
     height: 200px;
     border-radius: 25px;
-    margin-top: 10px;
 }
 .photo{
     width: 100%;
