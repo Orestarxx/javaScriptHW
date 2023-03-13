@@ -19,7 +19,7 @@ if(products === null){
     return accumulator
 
 },{smartphones:[],fragrances:[],skincare:[],groceries:[],homeDecoration:[]})
-    console.log(reducedProducts.homeDecoration);
+
 }
 
 

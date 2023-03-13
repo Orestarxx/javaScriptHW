@@ -1,8 +1,5 @@
 let userUrl = new URL(location.href);
-
- let currentUser = userUrl.searchParams.get('data')
-let user = JSON.parse(currentUser)
-console.log(user);
+let user = JSON.parse(userUrl.searchParams.get('data'))
 
 let fatherDiv = document.createElement(`div`);
  fatherDiv.classList.add(`father`);

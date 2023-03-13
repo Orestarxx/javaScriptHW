@@ -13,7 +13,7 @@ fetch('https://dummyjson.com/products')
 
             let productA = document.createElement('a');
             productA.target ='_blank';
-            productA.href = `detailsProduct.html?product=${JSON.stringify(product)}`;
+            productA.href = `../details/detailsProduct.html?product=${JSON.stringify(product)}`;
             productHolder.append(productA);
 
             let productDiv = document.createElement('div');
@@ -34,7 +34,7 @@ fetch('https://dummyjson.com/products')
             });
 
             let circleImg = document.createElement('img');
-            circleImg.src = './icons/trolley.png';
+            circleImg.src = '../icons/trolley.png';
             circleImg.classList.add('circleImg');
             cartCircle.append(circleImg);
             productHolder.append(cartCircle);
