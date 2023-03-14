@@ -1,79 +1,80 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.slider {
-    width: 800px;
+#main{
+    width: 100%;
     height: 500px;
-    overflow: hidden;
-    border: 10px solid #000;
+    border: 1px solid;
 }
-
-.middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.navigation {
-    position: absolute;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-}
-
-.bar {
-    width: 30px;
-    height: 8px;
-    margin: 6px;
-    cursor: pointer;
-    background-color: #000;
-    opacity: .5;
-    border-radius: 10px;
-    transition: all 0.4s ease;
-}
-
-.bar:hover {
-    opacity: 1;
-    transform:scale(1.1);
-}
-
-input[name="r"] {
-    position: absolute;
-    visibility: hidden;
-}
-
-#slides {
-    width: 400%;
+#left{
+    width: 40%;
     height: 100%;
-    display: flex;
+
+}
+img{
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    bottom: 2%;
 }
 
-.slide {
-    width: 25%;
-    transition: all 0.6s ease;
+* {box-sizing:border-box}
+
+#slideshow-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    top: 1%;
+
 }
 
-.img {
+.mySlides {
     width: 100%;
     height: 100%;
 }
 
-#r1:checked ~ .s1 {
-    margin-left: 0%;
+.points{
+    position: relative;
+}
+.prev, .next {
+    cursor: pointer;
+    width: 100%;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
-#r2:checked ~ .s1 {
-    margin-left: -25%;
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
-#r3:checked ~ .s1 {
-    margin-left: -50%;
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
-#r4:checked ~ .s1 {
-    margin-left: -75%;
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }

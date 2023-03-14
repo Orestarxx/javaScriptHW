@@ -116,6 +116,7 @@ divUl.style.display = "none";
  document.body.appendChild(divUl);
  divUl.appendChild(ul);
 
+
  fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
      .then(response => response.json())
      .then(posts => {
@@ -136,8 +137,8 @@ divUl.style.display = "none";
 
      });
 
-
 butt.addEventListener('click', (eo) => {
+
  if (divUl.style.display === "none") {
   divUl.style.display = "block";
  } else {
