@@ -25,6 +25,21 @@ if(products === null){
     return accumulator
 
 },{smartphones:[],fragrances:[],skincare:[],groceries:[],homeDecoration:[]});
+
+    if(reducedProducts.smartphones !== null){
+
+    }else if(reducedProducts.fragrances !== null){
+
+    }else if(reducedProducts.skincare !== null){
+
+    }else if(reducedProducts.groceries !== null){
+
+    }else if(reducedProducts.homeDecoration !== null){
+
+    }else{
+
+    }
+
     let smartphonesDiv = document.createElement('div');
     smartphonesDiv.classList.add('smartphones');
 
